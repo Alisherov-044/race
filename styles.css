@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.sky {
+  width: 100%;
+  height: 400px;
+  background-color: skyblue;
+}
+
+.sky .cloud {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  width: 200px;
+  animation: slideCloud 2s ease forwards;
+}
+
+.sky .cloud.second {
+  left: unset;
+  right: -100px;
+}
+
+.grass {
+  width: 100%;
+  height: 300px;
+  flex: 1 1 auto;
+  background-color: green;
+}
+
+.road {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  background-color: brown;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./assets/road.png");
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.line {
+  animation: drive 2s ease forwards;
+}
+
+.line img {
+  height: 60%;
+}
+
+.line.second img {
+  height: 100%;
+  transform: rotate(90deg) translateY(-35%);
+}
+
+@keyframes drive {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(85vw);
+  }
+}
+
+@keyframes slideCloud {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(-80vw);
+  }
+}
